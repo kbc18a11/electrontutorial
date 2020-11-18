@@ -1,0 +1,23 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbc18a11/electrontutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbc18a11/electrontutorial/issues"
+  },
+  "homepage": "https://github.com/kbc18a11/electrontutorial#readme",
+  "dependencies": {
+    "electron": "^11.0.1"
+  }
+}
