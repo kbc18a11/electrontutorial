@@ -8,7 +8,8 @@ app.on('ready', () => {
     // mainWindowを作成（windowの大きさや、Kioskモードにするかどうかなどもここで定義できる）
     mainWindow = new BrowserWindow({
         width: 800, height: 800, webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true,
         }
     });
     // Electronに表示するhtmlを絶対パスで指定（相対パスだと動かない）
@@ -20,10 +21,4 @@ app.on('ready', () => {
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
-});
-
-// ipc.on(channel, listener) の形をとる。channel 名はなんでも良い。
-ipc.on('synchronous-message', (event, arg) => {
-    console.log("arg: ", arg);  // arg には 'hoge' が入る (後述)
-    event.returnValue = "Okay"; //レンダラープロセスに返す
 });

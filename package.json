@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kbc18a11/electrontutorial#readme",
   "dependencies": {
-    "electron": "^11.0.1"
+    "electron": "^11.0.1",
+    "nedb": "^1.8.0"
   }
 }
