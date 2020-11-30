@@ -1,10 +1,18 @@
 const electron = require('electron');
 const { BrowserWindow } = electron.remote;
 const path = require('path');
+const TestModel = require('./db/dbnodel/TestModel');
 
 window.onload = () => {
-
+    loadTestModelData();
 };
+
+async function loadTestModelData() {
+    const dbdatas = await new TestModel().all();
+    console.log(dbdatas);
+
+}
+
 
 /**
  * ページリロード
@@ -43,4 +51,15 @@ const tcpButton = document.getElementsByClassName('tcp')[0];
 tcpButton.addEventListener('click', () => {
     const htmlFileName = 'sub.html';
     openSubWindow(htmlFileName);
+});
+
+const submitButton = document.getElementsByClassName('insert')[0];
+submitButton.addEventListener('click', (e) => {
+    const name = document.getElementsByName('name')[0].value;
+
+    const createPrame = { name: name };
+    const testModel = new TestModel();
+
+    testModel.create(createPrame);
+    e.preventDefault();
 });

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kbc18a11/electrontutorial#readme",
   "dependencies": {
     "electron": "^11.0.1",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "nedb-promise": "^2.0.1"
   }
 }
