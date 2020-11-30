@@ -11,6 +11,26 @@ async function loadTestModelData() {
     const dbdatas = await new TestModel().all();
     console.log(dbdatas);
 
+    const dbdataTable = document.getElementsByClassName('dbdata')[0];
+
+    dbdatas.forEach((data) => {
+        const idtd = document.createElement('td');
+        idtd.className = '_id';
+        idtd.textContent = data._id;
+
+        const nametd = document.createElement('td');
+        nametd.className = 'name';
+        nametd.textContent = data.name;
+
+        const tr = document.createElement('tr');
+        tr.id = data.id;
+        tr.appendChild(idtd);
+        tr.appendChild(nametd);
+
+        dbdataTable.appendChild(tr);
+    });
+
+
 }
 
 
